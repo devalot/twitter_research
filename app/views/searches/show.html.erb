@@ -1,0 +1,9 @@
+<h1>You searched for <%= params[:q] %></h1>
+
+<ul>
+  <% @results.each do |r| %>
+    <li>
+      <%= r.user %> <em>said</em> <%= r.text %>
+    </li>
+  <% end %>
+</ul>
