@@ -1,6 +1,7 @@
 GIT
   remote: https://github.com/devalot/simple_twitter.git
   revision: 985a31ca9d9d4419b6ea78b1ada1084d08ff50ae
+  tag: v1.0.0
   specs:
     simple_twitter (1.0.0)
       httparty (~> 0.8.3)
@@ -44,14 +45,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.3.3)
-    columnize (0.3.6)
-    debugger (1.1.4)
-      columnize (>= 0.3.1)
-      debugger-linecache (~> 1.1.1)
-      debugger-ruby_core_source (~> 1.1.3)
-    debugger-linecache (1.1.2)
-      debugger-ruby_core_source (>= 1.1.1)
-    debugger-ruby_core_source (1.1.3)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -126,7 +119,6 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
-  debugger
   jquery-rails
   pg
   rails (= 3.2.6)
