@@ -108,4 +108,22 @@ class Tweet < ActiveRecord::Base
     cats = Category.where('LOWER(title) in (?)', words).order(:title)
     cats.map(&:title).join(', ')
   end
+
+  ##############################################################################
+  # Returns a comma separated string of the current category titles.
+  def categories_as_string
+    categories.map(&:title).sort.join(', ')
+  end
+
+  ##############################################################################
+  # Given a comma separated string of category titles, reset the
+  # categories for this tweet to the categories in the string.
+  def categories_as_string= (new_categories)
+    categories.clear
+
+    new_categories.split(/\s*,\s*/).each do |title|
+      cat = Category.with_title(title).first
+      categories << cat if !cat.nil?
+    end
+  end
 end
