@@ -1,0 +1,8 @@
+<ul>
+  <% @tweets.each do |tweet| %>
+    <li>
+      [ID: <%= tweet.id %>]
+      <%= tweet.twitter_user %> said <%= tweet.tweeted_text %>
+    </li>
+  <% end %>
+</ul>

@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>TwitterResearch</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>TwitterResearch</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-<%= yield %>
+    <nav>
+      <ul>
+        <li><%= link_to('Search', searches_url) %></li>
+        <li><%= link_to('My Saved Tweets', tweets_url) %></li>
+      </ul>
+    </nav>
 
-</body>
+    <div id="content">
+      <%= yield %>
+    </div>
+  </body>
 </html>

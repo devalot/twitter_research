@@ -4,6 +4,16 @@
   <% @results.each do |r| %>
     <li>
       <%= r.user %> <em>said</em> <%= r.text %>
+      <% tweet = Tweet.new(:twitter_user => r.user,
+                           :tweeted_text => r.text,
+                           :tweeted_at   => r.time) %>
+
+      <%= form_for(tweet) do |form| %>
+        <%= form.hidden_field(:twitter_user) %>
+        <%= form.hidden_field(:tweeted_text) %>
+        <%= form.hidden_field(:tweeted_at) %>
+        <%= form.submit('Save') %>
+      <% end %>
     </li>
   <% end %>
 </ul>
