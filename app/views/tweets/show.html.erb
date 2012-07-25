@@ -1,0 +1,16 @@
+<div class="tweet">
+  <span>
+    On <%= @tweet.tweeted_at %>, <%= @tweet.twitter_user %> said:
+  </span>
+
+  <p><%= @tweet.tweeted_text %></p>
+</div>
+
+<div class="notes">
+  <h2>My Notes:</h2>
+  <span>
+    <%= link_to('Create New Note', new_tweet_note_url(@tweet)) %>
+  </span>
+
+  <%= render(partial: 'notes/show', collection: @tweet.notes) %>
+</div>

@@ -5,6 +5,11 @@ class TweetsController < ApplicationController
     respond_with(@tweets)
   end
 
+  def show
+    @tweet = current_user.tweets.with_notes.find(params[:id])
+    respond_with(@tweet)
+  end
+
   def create
     @tweet = current_user.tweets.create(params[:tweet])
     respond_with(@tweet, :location => tweets_url)

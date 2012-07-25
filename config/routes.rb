@@ -4,7 +4,10 @@ TwitterResearch::Application.routes.draw do
 
   root(:to => 'searches#index')
   resources(:searches)
-  resources(:tweets)
+
+  resources(:tweets) do
+    resources(:notes)
+  end
 
 
   # The priority is based upon order of creation:

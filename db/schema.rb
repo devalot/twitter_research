@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120707172323) do
+ActiveRecord::Schema.define(:version => 20120708132036) do
 
   create_table "categories", :force => true do |t|
     t.string   "title",      :null => false
@@ -29,14 +29,12 @@ ActiveRecord::Schema.define(:version => 20120707172323) do
 
   create_table "notes", :force => true do |t|
     t.text     "note_text",  :null => false
-    t.integer  "user_id",    :null => false
     t.integer  "tweet_id",   :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   add_index "notes", ["tweet_id"], :name => "index_notes_on_tweet_id"
-  add_index "notes", ["user_id"], :name => "index_notes_on_user_id"
 
   create_table "tweets", :force => true do |t|
     t.string   "twitter_user", :null => false
