@@ -14,4 +14,15 @@ class TweetsController < ApplicationController
     @tweet = current_user.tweets.create(params[:tweet])
     respond_with(@tweet, :location => tweets_url)
   end
+
+  def edit
+    @tweet = current_user.tweets.find(params[:id])
+    respond_with(@tweet)
+  end
+
+  def update
+    @tweet = current_user.tweets.find(params[:id])
+    @tweet.update_attributes(params[:tweet])
+    respond_with(@tweet)
+  end
 end

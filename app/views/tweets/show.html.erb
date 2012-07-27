@@ -1,9 +1,20 @@
 <div class="tweet">
+  <h2>Tweet Info:</h2>
   <span>
     On <%= @tweet.tweeted_at %>, <%= @tweet.twitter_user %> said:
   </span>
 
   <p><%= @tweet.tweeted_text %></p>
+</div>
+
+<div class="categories">
+  <h2>Categories <%= link_to('Edit', edit_tweet_url(@tweet)) %></h2>
+
+  <% if @tweet.categories.empty? %>
+    <p>This tweet isn't in any categories.</p>
+  <% else %>
+    <p><%= @tweet.categories.map(&:title).to_sentence %></p>
+  <% end %>
 </div>
 
 <div class="notes">

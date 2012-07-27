@@ -1,7 +1,7 @@
 class Tweet < ActiveRecord::Base
 
   ##############################################################################
-  attr_accessible(:twitter_user, :tweeted_text, :tweeted_at)
+  attr_accessible(:twitter_user, :tweeted_text, :tweeted_at, :categories_as_string)
 
   ##############################################################################
   validates(:twitter_user, presence: true)

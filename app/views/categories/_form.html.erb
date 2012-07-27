@@ -1,0 +1,14 @@
+<%= form_for(@category) do |form| %>
+  <fieldset>
+    <legend>Category</legend>
+
+    <div>
+      <%= form.label(:title) %>
+      <%= form.text_field(:title) %>
+    </div>
+
+    <div>
+      <%= form.submit %>
+    </div>
+  </fieldset>
+<% end %>

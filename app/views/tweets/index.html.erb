@@ -1,8 +1,3 @@
 <ul>
-  <% @tweets.each do |tweet| %>
-    <li>
-      <%= tweet.twitter_user %> said <%= tweet.tweeted_text %>
-      <%= link_to('View', tweet_url(tweet)) %>
-    </li>
-  <% end %>
+  <%= render(partial: 'tweet', collection: @tweets) %>
 </ul>

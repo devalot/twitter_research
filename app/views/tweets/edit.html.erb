@@ -1,0 +1,21 @@
+<%= form_for(@tweet) do |form| %>
+  <fieldset>
+    <!-- Hi, I'm app/views/tweets/edit.html.erb -->
+    <legend>Edit a Tweet's Categories</legend>
+
+    <div>
+      <%= form.label(:categories_as_string, 'Categories') %>
+      <%= form.text_field(:categories_as_string) %>
+    </div>
+
+    <%= form.submit %>
+  </fieldset>
+<% end %>
+
+<h2>Available Categories</h2>
+
+<ul>
+  <% Category.order(:title).each do |c| %>
+    <li><%= c.title %></li>
+  <% end %>
+</ul>

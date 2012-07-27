@@ -8,12 +8,21 @@
   </head>
   <body>
 
-    <nav>
-      <ul>
-        <li><%= link_to('Search', searches_url) %></li>
-        <li><%= link_to('My Saved Tweets', tweets_url) %></li>
-      </ul>
-    </nav>
+    <% if user_signed_in? %>
+      <nav>
+        <ul>
+          <li><%= link_to('Search Twitter', searches_url) %></li>
+          <li><%= link_to('My Saved Tweets', tweets_url) %></li>
+          <li><%= link_to('Categories', categories_url) %></li>
+
+          <li>
+            <%= link_to('Log Out', destroy_user_session_url,
+                  :method  => :delete,
+                  :confirm => "Are you sure you want to log out?") %>
+          </li>
+        </ul>
+      </nav>
+    <% end %>
 
     <div id="content">
       <%= yield %>

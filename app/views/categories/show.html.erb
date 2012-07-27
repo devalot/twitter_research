@@ -1,0 +1,5 @@
+<h1>Tweets in <%= @category.title %></h1>
+
+<ul>
+  <%= render(partial: 'tweets/tweet', collection: @category.tweets) %>
+</ul>
