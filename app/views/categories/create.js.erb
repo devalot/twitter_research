@@ -1,0 +1,5 @@
+$(function () {
+  var html = "<%= j(render(partial: 'category', object: @category)) %>";
+  $("#categories").append(html);
+  $("#form").hide();
+});

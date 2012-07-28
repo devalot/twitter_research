@@ -1,0 +1,8 @@
+$(function () {
+  var html = "<%= j(render(partial: 'form')) %>";
+  $("#form").html(html).show();
+
+  $("#form input[name='cancel']").click(function () {
+    $("#form").hide();
+  });
+});
