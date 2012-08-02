@@ -1,0 +1,16 @@
+<li id="<%= dom_id(category) %>">
+  <span class="title">
+    <%= link_to(category.title, category_url(category)) %>
+  </span>
+
+  <span class="edit">
+    <%= link_to('Edit', edit_category_url(category)) %>
+  </span>
+
+  <span class="delete">
+    <%= link_to('Delete', category_url(category),
+          :method  => :delete,
+          :remote  => true,
+          :data    => {:confirm => 'Are you sure?'}) %>
+  </span>
+</li>
